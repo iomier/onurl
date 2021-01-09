@@ -41,7 +41,7 @@ const withDb = (fn: NextApiHandler) => async (
     return next();
   }
 
-  pendingPromise = mongoose.connect(process.env.DB, {
+  pendingPromise = mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

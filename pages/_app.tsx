@@ -5,6 +5,7 @@ import { appTitle } from '@/constants';
 import { DefaultSeoProps, DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/dist/client/router';
 import BaseThemeProvider from '@/components/BaseThemeProvider';
+import { Provider } from 'next-auth/client';
 
 import '../src/theme/fonts.css';
 
@@ -33,12 +34,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <DefaultSeo {...getDefaultSeoConfig(router.pathname)} />
-      <BaseThemeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </BaseThemeProvider>
+      <Provider session={pageProps.session}>
+        <DefaultSeo {...getDefaultSeoConfig(router.pathname)} />
+        <BaseThemeProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </BaseThemeProvider>
+      </Provider>
     </>
   );
 };

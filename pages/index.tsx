@@ -1,3 +1,2 @@
-import HomeView from '@/views/Home';
-import { Home } from '@/views/Home/Home';
+import HomeView from '@/views/Home/index';
 export default HomeView;

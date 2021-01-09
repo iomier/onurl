@@ -43,6 +43,7 @@ interface AliasViewProps {
 
 const AliasView: NextPage<AliasViewProps> = ({ error }) => {
   if (error) {
+    console.log(error);
     return <Alert severity="error">{error}</Alert>;
   }
 
