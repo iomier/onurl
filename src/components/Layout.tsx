@@ -41,56 +41,13 @@ const Layout: React.FC = ({ children }) => {
             </TitleLink>
           </NextLink>
           <Box flexGrow={1} />
-          {/*<IconButton*/}
-          {/*  component={ExternalLink}*/}
-          {/*  href="https://github.com/onderonur/onurl"*/}
-          {/*>*/}
-          {/*  <GitHubIcon />*/}
-          {/*</IconButton>*/}
         </Toolbar>
       </AppBar>
       <MainContent>
         <>{children}</>
       </MainContent>
-      {/* <Box
-        component="main"
-        display="flex"
-        flexDirection="column"
-        width="100%"
-        maxWidth={800}
-        marginX="auto"
-        marginY="1rem"
-        padding={4}
-        flex={1}
-      ></Box> */}
+
       <Divider />
-      {/*<Box*/}
-      {/*  display="flex"*/}
-      {/*  padding={1}*/}
-      {/*  justifyContent="flex-end"*/}
-      {/*  component="footer"*/}
-      {/*>*/}
-      {/*  <Spacer flexDirection="row" spacing={1}>*/}
-      {/*    <IconButton*/}
-      {/*      component={ExternalLink}*/}
-      {/*      href="https://linkedin.com/in/onderonur"*/}
-      {/*    >*/}
-      {/*      <LinkedInIcon />*/}
-      {/*    </IconButton>*/}
-      {/*    <IconButton*/}
-      {/*      component={ExternalLink}*/}
-      {/*      href="https://twitter.com/onderonur_"*/}
-      {/*    >*/}
-      {/*      <TwitterIcon />*/}
-      {/*    </IconButton>*/}
-      {/*    <IconButton*/}
-      {/*      component={ExternalLink}*/}
-      {/*      href="https://github.com/onderonur"*/}
-      {/*    >*/}
-      {/*      <GitHubIcon />*/}
-      {/*    </IconButton>*/}
-      {/*  </Spacer>*/}
-      {/*</Box>*/}
     </Box>
   );
 };

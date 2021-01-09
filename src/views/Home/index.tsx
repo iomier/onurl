@@ -119,14 +119,14 @@ const HomeView = () => {
 
   return (
     <>
-      <Box flex={1} height="200px" marginBottom={2}>
-        {/*<UrlShortenerSvg />*/}
-        <Image
-          src="/karafs.png"
-          alt="Picture of the author"
-          width={150}
-          height={150}
-        />
+      <Box flex={1} height="auto" marginBottom={2}>
+        <UrlShortenerSvg />
+        {/*<Image*/}
+        {/*  src="/karafs.png"*/}
+        {/*  alt="Picture of the author"*/}
+        {/*  width={150}*/}
+        {/*  height={150}*/}
+        {/*/>*/}
       </Box>
       <Formik<UrlFormValues>
         initialValues={initialValues}

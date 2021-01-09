@@ -6,7 +6,7 @@ import { DefaultSeoProps, DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/dist/client/router';
 import BaseThemeProvider from '@/components/BaseThemeProvider';
 
-import '../src/theme/fonts.css'
+import '../src/theme/fonts.css';
 
 const getDefaultSeoConfig = (pathname: string): DefaultSeoProps => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -17,37 +17,6 @@ const getDefaultSeoConfig = (pathname: string): DefaultSeoProps => {
     title,
     canonical: url,
     description,
-    openGraph: {
-      url,
-      title,
-      type: 'website',
-      description,
-      site_name: appTitle,
-      images: [
-        {
-          url: `${baseUrl}/logo_400.png`,
-          height: 400,
-          width: 400,
-          alt: 'OnURL large logo',
-        },
-        {
-          url: `${baseUrl}/logo_200.png`,
-          height: 200,
-          width: 200,
-          alt: 'OnURL medium logo',
-        },
-        {
-          url: `${baseUrl}/logo_80.png`,
-          height: 80,
-          width: 80,
-          alt: 'OnURL small logo',
-        },
-      ],
-    },
-    additionalMetaTags: [
-      { name: 'application-name', content: title },
-      { property: 'dc:creator', content: 'Onur Önder' },
-    ],
   };
 };
 
