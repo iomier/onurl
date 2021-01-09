@@ -3,7 +3,6 @@ import Document, { Head, Main, NextScript, Html } from 'next/document';
 import theme from '@/theme';
 import { ServerStyleSheets } from '@material-ui/core';
 import { ServerStyleSheet } from 'styled-components';
-
 // Example for material-ui with next-js:
 // https://github.com/mui-org/material-ui/tree/master/examples/nextjs
 export default class MyDocument extends Document {
@@ -14,9 +13,9 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>
-        <body>
-          <Main />
-          <NextScript />
+        <body dir="rtl">
+            <Main />
+            <NextScript />
         </body>
       </Html>
     );

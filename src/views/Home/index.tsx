@@ -10,7 +10,7 @@ import ExternalLink from '@/components/ExternalLink';
 import ShareButtons from './components/ShareButtons';
 import UrlQrCode from './components/UrlQrCode';
 import { shortUrlInputValidationSchema } from '@/utils/validationSchemas';
-import { Box, InputAdornment, Typography } from '@material-ui/core';
+import { Box, InputAdornment, TextField, Typography } from '@material-ui/core';
 import LinkIcon from '@material-ui/icons/Link';
 import BaseButton from '@/components/BaseButton';
 import Spacer from '@/components/Spacer';
@@ -18,6 +18,7 @@ import Alert from '@material-ui/lab/Alert';
 import { Bold } from '@/components/StyleUtils';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Image from 'next/image'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isAxiosError(error: any): error is AxiosError {
@@ -119,7 +120,13 @@ const HomeView = () => {
   return (
     <>
       <Box flex={1} height="200px" marginBottom={2}>
-        <UrlShortenerSvg />
+        {/*<UrlShortenerSvg />*/}
+        <Image
+          src="/karafs.png"
+          alt="Picture of the author"
+          width={150}
+          height={150}
+        />
       </Box>
       <Formik<UrlFormValues>
         initialValues={initialValues}
@@ -129,12 +136,12 @@ const HomeView = () => {
       >
         {({ isValid, isSubmitting }) => {
           return (
-            <>
+            <div dir={'rtl'}>
               <Form noValidate>
                 <Spacer flexDirection="column" spacing={2}>
                   <BaseTextField
                     name="url"
-                    label="URL"
+                    label="آدرس"
                     required
                     autoFocus
                     InputProps={{
@@ -147,9 +154,10 @@ const HomeView = () => {
                   />
                   <BaseTextField
                     name="customAlias"
-                    label="Custom Alias (Optional)"
+                    label="آدرس دلخواه (اختیاری)"
+                    variant="outlined"
                   />
-                  <Box display="flex" justifyContent="flex-end">
+                  <Box display="flex">
                     <BaseButton
                       type="submit"
                       color="primary"
@@ -157,7 +165,7 @@ const HomeView = () => {
                       loading={isSubmitting}
                       disabled={!isValid}
                     >
-                      Submit
+                      ارسال
                     </BaseButton>
                   </Box>
                 </Spacer>
@@ -166,20 +174,20 @@ const HomeView = () => {
                 {(data || error) && (
                   <Box marginY={2}>
                     <Alert severity={error ? 'error' : 'success'}>
-                      {error || 'Your new URL has been created successfully!'}
+                      {error || 'لینک جدید ساخته شد!'}
                     </Alert>
                   </Box>
                 )}
                 {url && (
                   <Box>
                     <Typography noWrap>
-                      <Bold>Old URL:</Bold>{' '}
+                      <Bold>لینک قدیمی:</Bold>{' '}
                       <ExternalLink href={url} hasIcon>
                         {url}
                       </ExternalLink>
                     </Typography>
                     <Typography>
-                      <Bold>Old URL Length:</Bold> {url.length} characters
+                      <Bold>طول لینک قدیمی:</Bold> {url.length}  کاراکتر
                     </Typography>
                   </Box>
                 )}
@@ -187,7 +195,7 @@ const HomeView = () => {
                   <Box>
                     <Box display="flex" alignItems="center">
                       <Typography noWrap>
-                        <Bold>New URL:</Bold>{' '}
+                        <Bold>لینک جدید:</Bold>{' '}
                         <ExternalLink href={shortenedUrl}>
                           {shortenedUrl}
                         </ExternalLink>
@@ -207,31 +215,31 @@ const HomeView = () => {
                             size="small"
                             variant="contained"
                           >
-                            {hasCopied ? 'Copied' : 'Copy'}
+                            {hasCopied ? 'کپی شد' : 'کپی'}
                           </BaseButton>
                         </CopyToClipboard>
                       </Box>
                     </Box>
                     <Typography variant="subtitle2" color="textSecondary">
-                      Click the link to open it in a new tab
+                     بر روی لینک کلیک کنید تا در تب جدیدی باز شود
                     </Typography>
                     <Typography>
-                      <Bold>New URL Length:</Bold> {shortenedUrl.length}{' '}
-                      characters
+                      <Bold>طول لینک جدید:</Bold> {shortenedUrl.length}{' '}
+                      کاراکتر
                     </Typography>
                   </Box>
                 )}
                 {shortenedUrl && (
                   <Box maxWidth={qrCodeSize}>
                     <Typography>
-                      <Bold>QR Code:</Bold>
+                      <Bold>QR کد:</Bold>
                     </Typography>
                     <UrlQrCode url={shortenedUrl} size={qrCodeSize} />
                   </Box>
                 )}
                 <ShareButtons url={shortenedUrl} />
               </Spacer>
-            </>
+            </div>
           );
         }}
       </Formik>

@@ -14,6 +14,7 @@ import {
   TumblrIcon,
   MailruShareButton,
   MailruIcon,
+  TelegramIcon,TelegramShareButton,
 } from 'react-share';
 import ShareButtonTooltip from './ShareButtonTooltip';
 import { Maybe } from '@/types';
@@ -63,18 +64,18 @@ const ShareButtons = React.memo<ShareButtonsProps>(({ url }) => {
           </TwitterShareButton>
         </ShareButtonTooltip>
       </Box>
+      {/*<Box>*/}
+      {/*  <ShareButtonTooltip name="Reddit">*/}
+      {/*    <RedditShareButton {...shareButtonProps}>*/}
+      {/*      <RedditIcon {...shareIconProps} />*/}
+      {/*    </RedditShareButton>*/}
+      {/*  </ShareButtonTooltip>*/}
+      {/*</Box>*/}
       <Box>
-        <ShareButtonTooltip name="Reddit">
-          <RedditShareButton {...shareButtonProps}>
-            <RedditIcon {...shareIconProps} />
-          </RedditShareButton>
-        </ShareButtonTooltip>
-      </Box>
-      <Box>
-        <ShareButtonTooltip name="Tumblr">
-          <TumblrShareButton {...shareButtonProps}>
-            <TumblrIcon {...shareIconProps} />
-          </TumblrShareButton>
+        <ShareButtonTooltip name="Telegram">
+          <TelegramShareButton {...shareButtonProps}>
+            <TelegramIcon {...shareIconProps} />
+          </TelegramShareButton>
         </ShareButtonTooltip>
       </Box>
       <Box>
@@ -84,13 +85,13 @@ const ShareButtons = React.memo<ShareButtonsProps>(({ url }) => {
           </LinkedinShareButton>
         </ShareButtonTooltip>
       </Box>
-      <Box>
-        <ShareButtonTooltip name="Mail.Ru">
-          <MailruShareButton {...shareButtonProps}>
-            <MailruIcon {...shareIconProps} />
-          </MailruShareButton>
-        </ShareButtonTooltip>
-      </Box>
+      {/*<Box>*/}
+      {/*  <ShareButtonTooltip name="Mail.Ru">*/}
+      {/*    <MailruShareButton {...shareButtonProps}>*/}
+      {/*      <MailruIcon {...shareIconProps} />*/}
+      {/*    </MailruShareButton>*/}
+      {/*  </ShareButtonTooltip>*/}
+      {/*</Box>*/}
       <Box>
         <EmailShareButton {...shareButtonProps}>
           <EmailIcon {...shareIconProps} />

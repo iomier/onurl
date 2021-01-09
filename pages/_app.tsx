@@ -6,6 +6,8 @@ import { DefaultSeoProps, DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/dist/client/router';
 import BaseThemeProvider from '@/components/BaseThemeProvider';
 
+import '../src/theme/fonts.css'
+
 const getDefaultSeoConfig = (pathname: string): DefaultSeoProps => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   const url = `${baseUrl}${pathname}`;
