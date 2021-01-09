@@ -62,7 +62,7 @@ export default HomeView;
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-// HomeView.getInitialProps = async ({ res, query }) => {
-//   pageRedirect(res, 'https://landing.karafsapp.com', { replace: true });
-//   return {};
-// };
+HomeView.getInitialProps = async ({ res, query }) => {
+  pageRedirect(res, 'https://landing.karafsapp.com', { replace: true });
+  return {};
+};
